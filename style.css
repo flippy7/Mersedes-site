@@ -1,0 +1,352 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body{
+    background-color: black;
+    font-family: 'Montserrat';
+    color:white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+.header {
+    margin-bottom: 20px;
+}
+.nav-btns {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    border-bottom: 1px solid white;
+}
+.btn {
+    background-color: black;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 8%;        
+    font-size: 20px;
+    margin: 10px;
+}
+.logo {
+    width: 70px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.main_photo {
+    position: relative;
+    display: inline-block;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    padding: 20px;
+}
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #444; /* Рамка для блоків */
+}
+.grid-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .grid-item h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 5px 10px;
+    color: white;
+    font-size: 18px;
+}
+.footer {
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    margin-top: 100px;
+}
+.footer a {
+    padding: 20px;
+}
+.footer-item {
+    border: 1px solid gray;
+    height: 200px;
+    text-align: center;
+    color:white;
+    text-align: center;
+    padding: 15px;
+}
+.footer-item:first-child {
+    border-left:none;
+}
+.footer-item:last-child {
+    border-right: none; /* Прибрати роздільник для першої колонки */
+    padding-right: 0;
+    text-align: center;
+    padding: 20px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    justify-content: center;
+}
+
+
+#main_car {
+    width: 100%;
+    display: block;
+}
+#main-btn {
+    position: absolute;
+    top:50%;
+    left:50%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    transform: translate(-50%, -50%)
+}
+
+
+
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.catalog {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h2 {
+    font-size: 24px;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.car-card {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 20px;
+}
+
+.car-card img {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.car-info {
+    flex: 1;
+}
+
+.car-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.car-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.car-details div {
+    width: 48%;
+}
+
+.car-price {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: right;
+    color: #f39c12;
+}
+
+
+.containerr {
+    text-align: center;
+}
+
+.wheel-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.wheel {
+    display: inline-block;
+    background-color: black;
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.wheel img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.description p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d0d0d0;
+}
+
+form {
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; /* Центрування форми */
+    margin-top: 200px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); /* Центруємо по вертикалі */
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: black;
+    color: #fff;
+}
+
+input[type="submit"] {
+    background-color: black;
+    color: #fff;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+textarea {
+    resize: vertical;
+}
+
+

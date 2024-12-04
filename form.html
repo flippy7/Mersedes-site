@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="image/b92bf19612e524ac1f9d5e998770eba7.jpg">
+        <div class="nav-btns">
+            <a href="index.html"><div class="btn">Головна</div></a>
+            <a href="cataloge.html"><div class="btn">Каталог</div></a>
+            <a href="action.html"><div class="btn">Акція</div></a>
+            <a href="extra.html"><div class="btn">Дод. товар</div></a>
+            <a href="form.html"><div class="btn">form</div></a>
+        </div>
+    </div>
+
+    <form onsubmit="return validateForm()">
+        <label for="name">Ім'я:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Електронна пошта:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="question">Питання:</label>
+        <textarea id="question" name="question" rows="4" required></textarea>
+
+        <input type="submit" value="Відправити">
+    </form>
+
+    <div class="footer">
+        <div class="footer-item">
+            <div>
+                <a href="index.html"><div>Головна</div></a>
+                <a href="cataloge.html"><div>Каталог</div></a>
+                <a href="action.html"><div>Акція</div></a>
+                <a href="extra.html"><div>Дод. товар</div></a>
+            </div>
+        </div>
+        <div class="footer-item">
+            <p>
+                Графік роботи:<br>
+                Пн 8:00 - 21:00<br>
+                Вт 8:00 - 21:00<br>
+                Ср 8:00 - 21:00<br>
+                Чт 8:00 - 21:00<br>
+                Пт 8:00 - 21:00<br>
+                Сб 8:00 - 18:00<br>
+                Нд 8:00 - 18:00<br>
+            </p>
+        </div>
+        <div class="footer-item">
+            <h3>Контакти</h3>
+            <p>Пр-т Свободи, д. 15, оф. 202, Київ, Україна</p>
+            <p>Звязок:</p>
+            <p><a href="tel:+79279121344">+03801234567</a></p>
+            <p>&copy;Пустовіт Максим</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
