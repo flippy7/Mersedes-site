@@ -1,11 +1,14 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 html, body{
     background-color: black;
     font-family: 'Montserrat';
     color:white;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 a {
@@ -14,6 +17,7 @@ a {
 }
 .header {
     margin-bottom: 20px;
+    position: relative;
 }
 .nav-btns {
     display: flex;
@@ -35,6 +39,80 @@ a {
     display: block;
     margin: 0 auto;
 }
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 6px 0;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Mobile navigation styles */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav a {
+    display: block;
+    padding: 15px;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+}
+
+.mobile-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Show hamburger menu on mobile */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-btns {
+        display: none;
+    }
+    
+    .mobile-nav.active {
+        display: flex;
+    }
+    
+    /* Hamburger animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 8px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -8px);
+    }
+}
 .main_photo {
     position: relative;
     display: inline-block;
@@ -50,6 +128,18 @@ a {
     gap: 20px;
     max-width: 1200px;
     padding: 20px;
+}
+
+@media screen and (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
 }
 .grid-item {
     position: relative;
@@ -76,6 +166,22 @@ a {
     display: grid;
     grid-template-columns: 33% 34% 33%;
     margin-top: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-item {
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid gray;
+    }
+    
+    .footer-item:last-child {
+        border-bottom: none;
+    }
 }
 .footer a {
     padding: 20px;
@@ -128,8 +234,15 @@ a {
 /* Slideshow container */
 .slideshow-container {
   max-width: 800px;
+  width: 80%;
   position: relative;
   margin: 0 auto;
+}
+
+.slideshow-container img {
+  max-height: 400px;
+  width: 100%;
+  object-fit: contain;
 }
 
 /* Hide the images by default */
@@ -232,6 +345,18 @@ h2 {
     padding-bottom: 20px;
 }
 
+@media screen and (max-width: 768px) {
+    .car-card {
+        flex-direction: column;
+    }
+    
+    .car-card img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
 .car-card img {
     width: 300px;
     height: auto;
@@ -258,6 +383,17 @@ h2 {
     width: 48%;
 }
 
+@media screen and (max-width: 576px) {
+    .car-details {
+        flex-direction: column;
+    }
+    
+    .car-details div {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
 .car-price {
     font-size: 22px;
     font-weight: bold;
@@ -268,6 +404,10 @@ h2 {
 
 .containerr {
     text-align: center;
+}
+
+.wheel-section {
+    text-align: left;
 }
 
 .wheel-section h2 {
@@ -308,10 +448,8 @@ form {
     width: 100%;
     max-width: 400px;
     margin: 0 auto; /* Центрування форми */
-    margin-top: 200px;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%); /* Центруємо по вертикалі */
+    margin-top: 50px; /* Змінено з 200px для уникнення перекриття з хедером */
+    /* Видалено position: relative, top: 50%, і transform: translateY(-50%) */
 }
 
 label {
@@ -349,4 +487,36 @@ textarea {
     resize: vertical;
 }
 
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
 
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: black;
+}
+
+.back-to-top i {
+    font-size: 24px;
+}

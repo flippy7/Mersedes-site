@@ -17,6 +17,20 @@
             <a href="extra.html"><div class="btn">Дод. товар</div></a>
             <a href="form.html"><div class="btn">form</div></a>
         </div>
+        <!-- Hamburger Menu Button -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav">
+            <a href="index.html">Головна</a>
+            <a href="cataloge.html">Каталог</a>
+            <a href="action.html">Акція</a>
+            <a href="extra.html">Дод. товар</a>
+            <a href="form.html">form</a>
+        </div>
     </div>
     <div class="wraper">
         <div class="main_photo">
@@ -81,5 +95,44 @@
             <p>&copy;Пустовіт Максим</p>
         </div>
     </div>
+    <!-- jQuery for hamburger menu functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Toggle mobile menu
+            $('.hamburger').click(function() {
+                $(this).toggleClass('active');
+                $('.mobile-nav').toggleClass('active');
+            });
+            
+            // Close menu when clicking a link
+            $('.mobile-nav a').click(function() {
+                $('.hamburger').removeClass('active');
+                $('.mobile-nav').removeClass('active');
+            });
+        });
+    </script>
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <i>↑</i>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            // Back to top button functionality
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('.back-to-top').addClass('visible');
+                } else {
+                    $('.back-to-top').removeClass('visible');
+                }
+            });
+            
+            $('.back-to-top').click(function() {
+                $('html, body').animate({scrollTop: 0}, 800);
+                return false;
+            });
+        });
+    </script>
 </body>
 </html>

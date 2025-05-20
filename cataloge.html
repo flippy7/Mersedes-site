@@ -6,6 +6,7 @@
     <title>Каталог</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="header">
@@ -17,22 +18,33 @@
             <a href="extra.html"><div class="btn">Дод. товар</div></a>
             <a href="form.html"><div class="btn">form</div></a>
         </div>
+        <!-- Hamburger Menu Button -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav">
+            <a href="index.html">Головна</a>
+            <a href="cataloge.html">Каталог</a>
+            <a href="action.html">Акція</a>
+            <a href="extra.html">Дод. товар</a>
+            <a href="form.html">form</a>
+        </div>
     </div>
 <div class="slideshow-container">
-    <div class="mySlides fade">
-      <img src="image/mercedes-benz-e-class-limousine-3.jpeg" style="width:100%">
-      <div class="text">    </div>
+    <div class="mySlides">
+      <img src="image/mercedes-benz-e-class-limousine-3.jpeg" style="width:80%; max-height: 400px; display: block; margin: 0 auto;">
     </div>
-    <div class="mySlides fade">
-      <img src="image/mers slider.jpeg" style="width:100%">
-      <div class="text"></div>
+    <div class="mySlides">
+      <img src="image/mers slider.jpeg" style="width:80%; max-height: 400px; display: block; margin: 0 auto;">
     </div>
-    <div class="mySlides fade">
-      <img src="image/mers slider2.jpeg" style="width:100%">
-      <div class="text"></div>
+    <div class="mySlides">
+      <img src="image/mers slider2.jpeg" style="width:80%; max-height: 400px; display: block; margin: 0 auto;">
     </div>
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
   </div>
   <br>
 <div class="wrapper">
@@ -138,5 +150,42 @@
             <p>&copy;Пустовіт Максим</p>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="jquery-slider.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Toggle mobile menu
+            $('.hamburger').click(function() {
+                $(this).toggleClass('active');
+                $('.mobile-nav').toggleClass('active');
+            });
+            
+            // Close menu when clicking a link
+            $('.mobile-nav a').click(function() {
+                $('.hamburger').removeClass('active');
+                $('.mobile-nav').removeClass('active');
+            });
+        });
+    </script>
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <i>↑</i>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            // Back to top button functionality
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('.back-to-top').addClass('visible');
+                } else {
+                    $('.back-to-top').removeClass('visible');
+                }
+            });
+            
+            $('.back-to-top').click(function() {
+                $('html, body').animate({scrollTop: 0}, 800);
+                return false;
+            });
+        });
+    </script>
 </body>
